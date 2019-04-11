@@ -2,12 +2,11 @@
 
 namespace Sqits\UserStamps\Observers;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Model;
 
 class UserStampObserver
 {
-
     /**
      * Handle to the User "creating" event.
      *
@@ -61,11 +60,10 @@ class UserStampObserver
     }
 
     /**
-     * Saves a model by igoring all other event dispatchers
+     * Saves a model by igoring all other event dispatchers.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return bool
-     *
      */
     private function saveWithoutEventDispatching(Model $model)
     {
@@ -77,5 +75,4 @@ class UserStampObserver
 
         return $saved;
     }
-
 }
