@@ -6,9 +6,8 @@ use Sqits\UserStamps\Observers\UserStampObserver;
 
 trait UserStamps
 {
-
     /**
-     * Bootstrap the trait
+     * Bootstrap the trait.
      *
      * @return void
      */
@@ -70,5 +69,4 @@ trait UserStamps
             )
         );
     }
-
 }

@@ -6,7 +6,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class UserStampsMacro implements MacroInterface
 {
-
     /**
      * Bootstrap the schema macro.
      *
@@ -57,7 +56,7 @@ class UserStampsMacro implements MacroInterface
     private function registerDropUserstamps()
     {
         Blueprint::macro('dropUserstamps', function () {
-           $this->dropForeign([
+            $this->dropForeign([
                config('userstamps.created_by_column'),
            ]);
 
@@ -65,8 +64,8 @@ class UserStampsMacro implements MacroInterface
                 config('userstamps.updated_by_column'),
             ]);
 
-           $this->dropColumn(config('userstamps.created_by_column'));
-           $this->dropColumn(config('userstamps.updated_by_column'));
+            $this->dropColumn(config('userstamps.created_by_column'));
+            $this->dropColumn(config('userstamps.updated_by_column'));
         });
     }
 
@@ -80,5 +79,4 @@ class UserStampsMacro implements MacroInterface
             $this->dropColumn(config('userstamps.deleted_by_column'));
         });
     }
-
 }
