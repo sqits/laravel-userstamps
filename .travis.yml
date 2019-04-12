@@ -8,7 +8,8 @@ services:
   - mysql
 
 env:
-  - DB_CONNECTION=mysql
+  global:
+    - DB_CONNECTION=mysql
   matrix:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""
