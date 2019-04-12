@@ -11,7 +11,7 @@ on your models by the currently logged in user.
 
 ## Installation and usage
 
-This package requires PHP 7.1 and Laravel 5.6 or higher. Install the package by running the following command in your console;
+This package requires PHP 7.2 and Laravel 5.6 or higher. Install the package by running the following command in your console;
 
 ``` bash
 composer require sqits/laravel-userstamps
