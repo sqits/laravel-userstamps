@@ -4,12 +4,7 @@ php:
   - 7.2
   - 7.3
 
-services:
-  - mysql
-
 env:
-  global:
-    - DB_CONNECTION=mysql
   matrix:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""
