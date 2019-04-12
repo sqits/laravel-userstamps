@@ -2,14 +2,14 @@
 
 namespace Sqits\UserStamps\Tests\Unit;
 
-use Sqits\UserStamps\Tests\Models\LaravelUserstamp;
-use Sqits\UserStamps\Tests\Models\User;
 use Sqits\UserStamps\Tests\TestCase;
+use Sqits\UserStamps\Tests\Models\User;
+use Sqits\UserStamps\Tests\Models\LaravelUserstamp;
 
 class UserstampsTest extends TestCase
 {
     /**
-     * Test if a model can be created and the created_by is set correctly
+     * Test if a model can be created and the created_by is set correctly.
      *
      * @test
      * @return void
@@ -18,13 +18,13 @@ class UserstampsTest extends TestCase
     {
         $user = User::create([
             'name' => 'Test User',
-            'email' => 'laravel@userstamps.dev'
+            'email' => 'laravel@userstamps.dev',
         ]);
 
         $this->actingAs($user);
 
         $model = LaravelUserstamp::create([
-            'name' => 'it_can_create_a_model_with_created_by_test'
+            'name' => 'it_can_create_a_model_with_created_by_test',
         ]);
 
         $this->assertArrayHasKey('created_by', $model);
@@ -33,7 +33,7 @@ class UserstampsTest extends TestCase
     }
 
     /**
-     * Test if a model can be updated and the updated_by is set correctly
+     * Test if a model can be updated and the updated_by is set correctly.
      *
      * @test
      * @return void
@@ -42,13 +42,13 @@ class UserstampsTest extends TestCase
     {
         $user = User::create([
             'name' => 'Test User',
-            'email' => 'laravel@userstamps.dev'
+            'email' => 'laravel@userstamps.dev',
         ]);
 
         $this->actingAs($user);
 
         $model = LaravelUserstamp::create([
-            'name' => 'it_can_create_a_model_with_created_by_test'
+            'name' => 'it_can_create_a_model_with_created_by_test',
         ]);
 
         $model->name = 'it_can_update_a_model_with_updated_by';
@@ -60,7 +60,7 @@ class UserstampsTest extends TestCase
     }
 
     /**
-     * Test if a model can be deleted and the deleted_by is set correctly
+     * Test if a model can be deleted and the deleted_by is set correctly.
      *
      * @test
      * @return void
@@ -69,13 +69,13 @@ class UserstampsTest extends TestCase
     {
         $user = User::create([
             'name' => 'Test User',
-            'email' => 'laravel@userstamps.dev'
+            'email' => 'laravel@userstamps.dev',
         ]);
 
         $this->actingAs($user);
 
         $model = LaravelUserstamp::create([
-            'name' => 'it_can_delete_a_model_with_deleted_by'
+            'name' => 'it_can_delete_a_model_with_deleted_by',
         ]);
 
         $model->delete();
@@ -86,7 +86,7 @@ class UserstampsTest extends TestCase
     }
 
     /**
-     * Test if a model can be deleted and the deleted_by is set correctly
+     * Test if a model can be deleted and the deleted_by is set correctly.
      *
      * @test
      * @return void
@@ -95,13 +95,13 @@ class UserstampsTest extends TestCase
     {
         $user = User::create([
             'name' => 'Test User',
-            'email' => 'laravel@userstamps.dev'
+            'email' => 'laravel@userstamps.dev',
         ]);
 
         $this->actingAs($user);
 
         $model = LaravelUserstamp::create([
-            'name' => 'it_can_delete_a_model_with_deleted_by'
+            'name' => 'it_can_delete_a_model_with_deleted_by',
         ]);
 
         $model->delete();

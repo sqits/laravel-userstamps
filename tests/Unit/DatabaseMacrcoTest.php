@@ -2,14 +2,14 @@
 
 namespace Sqits\UserStamps\Tests\Unit;
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 use Sqits\UserStamps\Tests\TestCase;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 
 class DatabaseMacrcoTest extends TestCase
 {
     /**
-     * Test if a database table can be created with the marco for userstamps
+     * Test if a database table can be created with the marco for userstamps.
      *
      * @test
      * @return void
@@ -28,7 +28,7 @@ class DatabaseMacrcoTest extends TestCase
     }
 
     /**
-     * Test if a database table can be created with the marco for soft userstamps
+     * Test if a database table can be created with the marco for soft userstamps.
      *
      * @test
      * @return void
@@ -46,7 +46,7 @@ class DatabaseMacrcoTest extends TestCase
     }
 
     /**
-     * Test if a database table can be created with the marco for soft userstamps
+     * Test if a database table can be created with the marco for soft userstamps.
      *
      * @test
      * @return void
@@ -63,8 +63,8 @@ class DatabaseMacrcoTest extends TestCase
         $this->assertContains('created_by', $columns);
         $this->assertContains('updated_by', $columns);
 
-        Schema::table('it_can_alter_a_table_for_dropping_userstamps', function(Blueprint $table) {
-           $table->dropUserstamps();
+        Schema::table('it_can_alter_a_table_for_dropping_userstamps', function (Blueprint $table) {
+            $table->dropUserstamps();
         });
 
         $columns = Schema::getColumnlisting('it_can_alter_a_table_for_dropping_userstamps');
@@ -74,7 +74,7 @@ class DatabaseMacrcoTest extends TestCase
     }
 
     /**
-     * Test if a database table can be created with the marco for soft userstamps
+     * Test if a database table can be created with the marco for soft userstamps.
      *
      * @test
      * @return void
@@ -90,7 +90,7 @@ class DatabaseMacrcoTest extends TestCase
 
         $this->assertContains('deleted_by', $columns);
 
-        Schema::table('it_can_alter_a_table_for_dropping_soft_userstamps', function(Blueprint $table) {
+        Schema::table('it_can_alter_a_table_for_dropping_soft_userstamps', function (Blueprint $table) {
             $table->dropSoftUserstamps();
         });
 

@@ -2,9 +2,9 @@
 
 namespace Sqits\UserStamps\Database\Schema\Macros;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\SQLiteConnection;
-use Illuminate\Support\Facades\DB;
 
 class UserStampsMacro implements MacroInterface
 {
@@ -58,13 +58,13 @@ class UserStampsMacro implements MacroInterface
     private function registerDropUserstamps()
     {
         Blueprint::macro('dropUserstamps', function () {
-            if (!DB::connection() instanceof SQLiteConnection) {
+            if (! DB::connection() instanceof SQLiteConnection) {
                 $this->dropForeign([
                     config('userstamps.created_by_column'),
                 ]);
             }
 
-            if (!DB::connection() instanceof SQLiteConnection) {
+            if (! DB::connection() instanceof SQLiteConnection) {
                 $this->dropForeign([
                     config('userstamps.updated_by_column'),
                 ]);
@@ -80,7 +80,7 @@ class UserStampsMacro implements MacroInterface
     private function registerDropSoftUserstamps()
     {
         Blueprint::macro('dropSoftUserstamps', function () {
-            if (!DB::connection() instanceof SQLiteConnection) {
+            if (! DB::connection() instanceof SQLiteConnection) {
                 $this->dropForeign([
                     config('userstamps.deleted_by_column'),
                 ]);

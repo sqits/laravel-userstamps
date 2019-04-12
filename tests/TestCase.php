@@ -2,14 +2,13 @@
 
 namespace Sqits\UserStamps\Tests;
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Sqits\UserStamps\Tests\Models\User;
+use Illuminate\Database\Schema\Blueprint;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-
     protected function getPackageProviders($app)
     {
         return ['Sqits\UserStamps\UserStampsServiceProvider'];
@@ -45,5 +44,4 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             $table->softUserstamps();
         });
     }
-
 }

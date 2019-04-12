@@ -3,8 +3,8 @@
 namespace Sqits\UserStamps\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Sqits\UserStamps\Traits\UserStamps;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LaravelUserstamp extends Model
 {
@@ -16,6 +16,6 @@ class LaravelUserstamp extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
 }
