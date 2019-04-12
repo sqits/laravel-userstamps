@@ -2,6 +2,7 @@
     "name": "sqits/laravel-userstamps",
     "description": "Package to add created_by, updated_by and deleted_by to models.",
     "keywords": ["laravel", "created", "updated", "deleted", "userstamps"],
+    "homepage": "https://github.com/sqits/laravel-userstamps",
     "license": "MIT",
     "authors": [
         {
@@ -23,14 +24,25 @@
             "url": "https://github.com/sqits/laravel-userstamps"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "laravel/framework": "^5.6"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "orchestra/testbench": "^3.5",
+        "larapack/dd": "^1.0",
+        "doctrine/dbal": "^2.6"
+    },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Sqits\\UserStamps\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sqits\\UserStamps\\Tests\\": "tests"
         }
     },
     "extra": {
