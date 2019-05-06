@@ -81,11 +81,11 @@ public function up()
 Add the Trait to your model
 
 ``` php
-use Sqits\UserStamps\Traits\UserStamps;
+use Sqits\UserStamps\Concerns\HasUserStamps;
 
 class Example extends Model {
 
-    use UserStamps;
+    use HasUserStamps;
 }
 ```
 
