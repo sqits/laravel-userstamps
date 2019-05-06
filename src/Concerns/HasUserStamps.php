@@ -1,10 +1,10 @@
 <?php
 
-namespace Sqits\UserStamps\Traits;
+namespace Sqits\UserStamps\Concerns;
 
 use Sqits\UserStamps\Observers\UserStampObserver;
 
-trait UserStamps
+trait HasUserStamps
 {
     /**
      * Bootstrap the trait.

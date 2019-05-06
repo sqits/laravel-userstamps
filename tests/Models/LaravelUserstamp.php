@@ -3,12 +3,12 @@
 namespace Sqits\UserStamps\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Sqits\UserStamps\Traits\UserStamps;
+use Sqits\UserStamps\Concerns\HasUserStamps;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LaravelUserstamp extends Model
 {
-    use UserStamps, SoftDeletes;
+    use HasUserStamps, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
