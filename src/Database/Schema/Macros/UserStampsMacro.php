@@ -24,8 +24,13 @@ class UserStampsMacro implements MacroInterface
     private function registerUserstamps()
     {
         Blueprint::macro('userstamps', function () {
-            $this->unsignedInteger(config('userstamps.created_by_column'))->nullable();
-            $this->unsignedInteger(config('userstamps.updated_by_column'))->nullable();
+            if(config('userstamps.users_table_column_type') === 'bigIncrements') {
+                $this->unsignedBigInteger(config('userstamps.created_by_column'))->nullable();
+                $this->unsignedBigInteger(config('userstamps.updated_by_column'))->nullable();
+            } else {
+                $this->unsignedInteger(config('userstamps.created_by_column'))->nullable();
+                $this->unsignedInteger(config('userstamps.updated_by_column'))->nullable();
+            }
 
             $this->foreign(config('userstamps.created_by_column'))
                 ->references('id')
@@ -44,7 +49,11 @@ class UserStampsMacro implements MacroInterface
     private function registerSoftUserstamps()
     {
         Blueprint::macro('softUserstamps', function () {
-            $this->unsignedInteger(config('userstamps.deleted_by_column'))->nullable();
+            if(config('userstamps.users_table_column_type') === 'bigIncrements') {
+                $this->unsignedBigInteger(config('userstamps.deleted_by_column'))->nullable();
+            } else {
+                $this->unsignedInteger(config('userstamps.deleted_by_column'))->nullable();
+            }
 
             $this->foreign(config('userstamps.deleted_by_column'))
                 ->references('id')
