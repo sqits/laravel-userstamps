@@ -11,7 +11,7 @@ trait HasUserStamps
      *
      * @return void
      */
-    public static function bootUserStamps()
+    public static function bootHasUserStamps()
     {
         static::observe(UserStampObserver::class);
     }
