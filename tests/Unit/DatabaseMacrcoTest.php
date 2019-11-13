@@ -2,9 +2,9 @@
 
 namespace Sqits\UserStamps\Tests\Unit;
 
-use Sqits\UserStamps\Tests\TestCase;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use Sqits\UserStamps\Tests\TestCase;
 
 class DatabaseMacrcoTest extends TestCase
 {

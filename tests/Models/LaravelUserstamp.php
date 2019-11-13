@@ -3,8 +3,8 @@
 namespace Sqits\UserStamps\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Sqits\UserStamps\Concerns\HasUserStamps;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Sqits\UserStamps\Concerns\HasUserStamps;
 
 class LaravelUserstamp extends Model
 {

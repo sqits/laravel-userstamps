@@ -2,9 +2,9 @@
 
 namespace Sqits\UserStamps\Database\Schema\Macros;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\SQLiteConnection;
+use Illuminate\Support\Facades\DB;
 
 class UserStampsMacro implements MacroInterface
 {

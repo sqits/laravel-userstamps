@@ -2,9 +2,9 @@
 
 namespace Sqits\UserStamps\Tests\Unit;
 
-use Sqits\UserStamps\Tests\TestCase;
-use Sqits\UserStamps\Tests\Models\User;
 use Sqits\UserStamps\Tests\Models\LaravelUserstamp;
+use Sqits\UserStamps\Tests\Models\User;
+use Sqits\UserStamps\Tests\TestCase;
 
 class UserstampsTest extends TestCase
 {
