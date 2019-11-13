@@ -16,6 +16,7 @@ class UserStampObserver
     public function creating(Model $model)
     {
         $model->{config('userstamps.created_by_column')} = Auth::id();
+        $model->{config('userstamps.updated_by_column')} = Auth::id();
     }
 
     /**
@@ -39,7 +40,7 @@ class UserStampObserver
     {
         if ($model->usingSoftDeletes()) {
             $model->{config('userstamps.deleted_by_column')} = Auth::id();
-
+            $model->{config('userstamps.updated_by_column')} = Auth::id();
             $this->saveWithoutEventDispatching($model);
         }
     }
@@ -54,7 +55,7 @@ class UserStampObserver
     {
         if ($model->usingSoftDeletes()) {
             $model->{config('userstamps.deleted_by_column')} = null;
-
+            $model->{config('userstamps.updated_by_column')} = Auth::id();
             $this->saveWithoutEventDispatching($model);
         }
     }
