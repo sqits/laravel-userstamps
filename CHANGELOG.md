@@ -2,8 +2,11 @@
 
 All notable changes to laravel-userstamps will be documented in this file.
 
+### 0.0.7
+- Updated the package to use in Laravel 7
+
 ### 0.0.6
-- set the updated_by also when creating, updating or restoring a model 
+- Set the updated_by also when creating, updating or restoring a model 
 [PR #5](https://github.com/sqits/laravel-userstamps/pull/5)
 
 ### 0.0.5
