@@ -27,18 +27,21 @@ class UserStampsMacro implements MacroInterface
             if (config('userstamps.users_table_column_type') === 'bigIncrements') {
                 $this->unsignedBigInteger(config('userstamps.created_by_column'))->nullable();
                 $this->unsignedBigInteger(config('userstamps.updated_by_column'))->nullable();
+            } else if (config('userstamps.users_table_column_type') === 'uuid') {
+                $this->uuid(config('userstamps.created_by_column'))->nullable();
+                $this->uuid(config('userstamps.updated_by_column'))->nullable();
             } else {
                 $this->unsignedInteger(config('userstamps.created_by_column'))->nullable();
                 $this->unsignedInteger(config('userstamps.updated_by_column'))->nullable();
             }
 
             $this->foreign(config('userstamps.created_by_column'))
-                ->references('id')
+                ->references(config('userstamps.users_table_column_id_name'))
                 ->on(config('userstamps.users_table'))
                 ->onDelete('set null');
 
             $this->foreign(config('userstamps.updated_by_column'))
-                ->references('id')
+                ->references(config('userstamps.users_table_column_id_name'))
                 ->on(config('userstamps.users_table'))
                 ->onDelete('set null');
 
@@ -51,12 +54,14 @@ class UserStampsMacro implements MacroInterface
         Blueprint::macro('softUserstamps', function () {
             if (config('userstamps.users_table_column_type') === 'bigIncrements') {
                 $this->unsignedBigInteger(config('userstamps.deleted_by_column'))->nullable();
+            } else if (config('userstamps.users_table_column_type') === 'uuid') {
+                $this->uuid(config('userstamps.deleted_by_column'))->nullable();
             } else {
                 $this->unsignedInteger(config('userstamps.deleted_by_column'))->nullable();
             }
 
             $this->foreign(config('userstamps.deleted_by_column'))
-                ->references('id')
+                ->references(config('userstamps.users_table_column_id_name'))
                 ->on(config('userstamps.users_table'))
                 ->onDelete('set null');
 

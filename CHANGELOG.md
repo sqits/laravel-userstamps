@@ -2,12 +2,18 @@
 
 All notable changes to laravel-userstamps will be documented in this file.
 
+### 0.0.8
+- [Issue #7](https://github.com/sqits/laravel-userstamps/issues/7)
+Added support for column type `uuid`
+- [Issue #8](https://github.com/sqits/laravel-userstamps/issues/8)
+Updated the package to use in Laravel 8 
+
 ### 0.0.7
 - Updated the package to use in Laravel 7
 
 ### 0.0.6
-- Set the updated_by also when creating, updating or restoring a model 
-[PR #5](https://github.com/sqits/laravel-userstamps/pull/5)
+- [Pull Request #5](https://github.com/sqits/laravel-userstamps/pull/5)
+Set the updated_by also when creating, updating or restoring a model 
 
 ### 0.0.5
 - Updated the package to use in Laravel 6

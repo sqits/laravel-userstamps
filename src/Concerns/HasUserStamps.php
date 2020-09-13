@@ -25,7 +25,8 @@ trait HasUserStamps
     {
         return $this->belongsTo(
             config('userstamps.users_model'),
-            config('userstamps.created_by_column')
+            config('userstamps.created_by_column'),
+            config('userstamps.users_table_column_id_name')
         );
     }
 
@@ -38,7 +39,8 @@ trait HasUserStamps
     {
         return $this->belongsTo(
             config('userstamps.users_model'),
-            config('userstamps.updated_by_column')
+            config('userstamps.updated_by_column'),
+            config('userstamps.users_table_column_id_name')
         );
     }
 
@@ -51,7 +53,8 @@ trait HasUserStamps
     {
         return $this->belongsTo(
             config('userstamps.users_model'),
-            config('userstamps.deleted_by_column')
+            config('userstamps.deleted_by_column'),
+            config('userstamps.users_table_column_id_name')
         );
     }
 

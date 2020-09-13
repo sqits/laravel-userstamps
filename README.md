@@ -37,9 +37,19 @@ return [
     /*
      * Define the table column type which is used in the table schema for
      * the id of the user
+     *
+     * Options: increments, bigIncrements, uuid
+     * Default: bigIncrements
      */
-    
+
     'users_table_column_type' => 'bigIncrements',
+
+    /*
+     * Define the name of the column which is used in the foreign key reference
+     * to the id of the user
+     */
+
+    'users_table_column_id_name' => 'id',
     
     /*
      * Define the mmodel which is used for the relationships on your models

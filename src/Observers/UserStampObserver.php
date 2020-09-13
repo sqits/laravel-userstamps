@@ -15,8 +15,8 @@ class UserStampObserver
      */
     public function creating(Model $model)
     {
-        $model->{config('userstamps.created_by_column')} = Auth::id();
-        $model->{config('userstamps.updated_by_column')} = Auth::id();
+        $model->{config('userstamps.created_by_column')} = $this->getUsersPrimaryValue();
+        $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
     }
 
     /**
@@ -27,7 +27,7 @@ class UserStampObserver
      */
     public function updating(Model $model)
     {
-        $model->{config('userstamps.updated_by_column')} = Auth::id();
+        $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
     }
 
     /**
@@ -39,8 +39,8 @@ class UserStampObserver
     public function deleting(Model $model)
     {
         if ($model->usingSoftDeletes()) {
-            $model->{config('userstamps.deleted_by_column')} = Auth::id();
-            $model->{config('userstamps.updated_by_column')} = Auth::id();
+            $model->{config('userstamps.deleted_by_column')} = $this->getUsersPrimaryValue();
+            $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
             $this->saveWithoutEventDispatching($model);
         }
     }
@@ -55,7 +55,7 @@ class UserStampObserver
     {
         if ($model->usingSoftDeletes()) {
             $model->{config('userstamps.deleted_by_column')} = null;
-            $model->{config('userstamps.updated_by_column')} = Auth::id();
+            $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
             $this->saveWithoutEventDispatching($model);
         }
     }
@@ -75,5 +75,24 @@ class UserStampObserver
         $model->setEventDispatcher($eventDispatcher);
 
         return $saved;
+    }
+
+    /**
+     * Returns the primary value for the logged in user or null when
+     * there is no logged in user.
+     *
+     * @return int|null
+     */
+    private function getUsersPrimaryValue()
+    {
+        if (! Auth::check()) {
+            return null;
+        }
+
+        if (config('userstamps.users_table_column_id_name') !== 'id') {
+            return Auth::user()->{config('userstamps.users_table_column_id_name')};
+        }
+
+        return Auth::id();
     }
 }
