@@ -38,12 +38,12 @@ class UserStampsMacro implements MacroInterface
             $this->foreign(config('userstamps.created_by_column'))
                 ->references(config('userstamps.users_table_column_id_name'))
                 ->on(config('userstamps.users_table'))
-                ->onDelete('set null');
+                ->onDelete('no action');
 
             $this->foreign(config('userstamps.updated_by_column'))
                 ->references(config('userstamps.users_table_column_id_name'))
                 ->on(config('userstamps.users_table'))
-                ->onDelete('set null');
+                ->onDelete('no action');
 
             return $this;
         });
@@ -63,7 +63,7 @@ class UserStampsMacro implements MacroInterface
             $this->foreign(config('userstamps.deleted_by_column'))
                 ->references(config('userstamps.users_table_column_id_name'))
                 ->on(config('userstamps.users_table'))
-                ->onDelete('set null');
+                ->onDelete('no action');
 
             return $this;
         });
