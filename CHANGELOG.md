@@ -2,6 +2,15 @@
 
 All notable changes to laravel-userstamps will be documented in this file.
 
+### 0.0.10
+- [Pull Request #12](https://github.com/sqits/laravel-userstamps/pull/12)
+Added support for Laravel 9
+- [Pull Request #16](https://github.com/sqits/laravel-userstamps/pull/16)
+Fixed a type in the comments
+
+### 0.0.9
+- Added support for PHP8
+
 ### 0.0.8
 - [Issue #7](https://github.com/sqits/laravel-userstamps/issues/7)
 Added support for column type `uuid`
