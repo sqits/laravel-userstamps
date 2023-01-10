@@ -61,7 +61,7 @@ class UserStampObserver
     }
 
     /**
-     * Saves a model by igoring all other event dispatchers.
+     * Saves a model by ignoring all other event dispatchers.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
      * @return bool
