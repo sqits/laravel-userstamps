@@ -2,6 +2,9 @@
 
 All notable changes to laravel-userstamps will be documented in this file.
 
+### 0.0.12
+- Added support for Laravel 11
+
 ### 0.0.11
 - Added support for Laravel 10
 
