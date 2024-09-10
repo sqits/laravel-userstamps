@@ -1,0 +1,48 @@
+{
+    "name": "turahe/laravel-userstamps",
+    "description": "Package to add created_by, updated_by and deleted_by to models.",
+    "keywords": ["laravel", "created", "updated", "deleted", "userstamps"],
+    "homepage": "https://github.com/turahe/laravel-userstamps",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nur Wachid",
+            "email": "wachid@outlook.com",
+            "homepage": "https://www.wach.id"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/turahe/laravel-userstamps"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^9.0",
+        "larapack/dd": "^1.1",
+        "doctrine/dbal": "^3.5"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Turahe\\UserStamps\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Turahe\\UserStamps\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Turahe\\UserStamps\\UserStampsServiceProvider"
+            ]
+        }
+    }
+}
