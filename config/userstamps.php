@@ -12,7 +12,7 @@ return [
      * Define the table column type which is used in the table schema for
      * the id of the user
      *
-     * Options: increments, bigIncrements, uuid
+     * Options: increments, bigIncrements, uuid, ulid
      * Default: bigIncrements
      */
 

@@ -30,6 +30,9 @@ class UserStampsMacro implements MacroInterface
             } elseif (config('userstamps.users_table_column_type') === 'uuid') {
                 $this->uuid(config('userstamps.created_by_column'))->nullable();
                 $this->uuid(config('userstamps.updated_by_column'))->nullable();
+            } elseif (config('userstamps.users_table_column_type') === 'ulid') {
+                $this->ulid(config('userstamps.created_by_column'))->nullable();
+                $this->ulid(config('userstamps.updated_by_column'))->nullable();
             } else {
                 $this->unsignedInteger(config('userstamps.created_by_column'))->nullable();
                 $this->unsignedInteger(config('userstamps.updated_by_column'))->nullable();
@@ -56,6 +59,8 @@ class UserStampsMacro implements MacroInterface
                 $this->unsignedBigInteger(config('userstamps.deleted_by_column'))->nullable();
             } elseif (config('userstamps.users_table_column_type') === 'uuid') {
                 $this->uuid(config('userstamps.deleted_by_column'))->nullable();
+            } elseif (config('userstamps.users_table_column_type') === 'uuid') {
+                $this->ulid(config('userstamps.deleted_by_column'))->nullable();
             } else {
                 $this->unsignedInteger(config('userstamps.deleted_by_column'))->nullable();
             }
