@@ -15,8 +15,13 @@ class UserStampObserver
      */
     public function creating(Model $model)
     {
-        $model->{config('userstamps.created_by_column')} = $this->getUsersPrimaryValue();
-        $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
+        if ($model->isClean(config('userstamps.created_by_column'))) {
+            $model->{config('userstamps.created_by_column')} = $this->getUsersPrimaryValue();
+        }
+
+        if ($model->isClean(config('userstamps.updated_by_column'))) {
+            $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
+        }
     }
 
     /**
@@ -27,7 +32,9 @@ class UserStampObserver
      */
     public function updating(Model $model)
     {
-        $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
+        if ($model->isClean(config('userstamps.updated_by_column'))) {
+            $model->{config('userstamps.updated_by_column')} = $this->getUsersPrimaryValue();
+        }
     }
 
     /**

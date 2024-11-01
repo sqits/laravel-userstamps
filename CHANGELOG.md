@@ -2,6 +2,9 @@
 
 All notable changes to laravel-userstamps will be documented in this file.
 
+### 0.0.14
+- Made it possible to overwrite the userstamp fields with a custom value when creating or updating a model
+
 ### 0.0.13
 - [Issue #21](https://github.com/sqits/laravel-userstamps/issues/21) 
 Added support for using ulid as the column type for the users
