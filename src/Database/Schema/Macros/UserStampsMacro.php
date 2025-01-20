@@ -59,7 +59,7 @@ class UserStampsMacro implements MacroInterface
                 $this->unsignedBigInteger(config('userstamps.deleted_by_column'))->nullable();
             } elseif (config('userstamps.users_table_column_type') === 'uuid') {
                 $this->uuid(config('userstamps.deleted_by_column'))->nullable();
-            } elseif (config('userstamps.users_table_column_type') === 'uuid') {
+            } elseif (config('userstamps.users_table_column_type') === 'ulid') {
                 $this->ulid(config('userstamps.deleted_by_column'))->nullable();
             } else {
                 $this->unsignedInteger(config('userstamps.deleted_by_column'))->nullable();
