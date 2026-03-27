@@ -2,6 +2,12 @@
 
 All notable changes to laravel-userstamps will be documented in this file.
 
+### 0.0.16
+- Added support for Laravel 13
+
+### 0.0.15
+- Added support for Laravel 12
+
 ### 0.0.14
 - Made it possible to overwrite the userstamp fields with a custom value when creating or updating a model
 
